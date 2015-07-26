@@ -19,11 +19,21 @@ body{
 
 .navbar-custom .icon-bar {
 	background-color:red;
+    color: black;
+}
+
+.navbar-brand {
+    font-size: 45px;
+    padding-top: 3%;
+    color: black;
+    font-family: Geneva;
+    z-index: 0;
 }
 
 .navbar-custom {
-	background-color: red;
+	background-color: white;
     color:#fff;
+    /*float: right;*/
 }
 
 .navbar-custom li>a:hover,.navbar-custom li>a:focus {
@@ -31,7 +41,9 @@ body{
 }
 
 .navbar-custom a{
-    color:#fefefe;
+    /*color:#fefefe;*/
+    color: red;
+    padding-right: 2%;
 }
 
 .navbar-custom .form-control:focus {
@@ -47,19 +59,87 @@ body{
 
 #main>.row {
     overflow-y:scroll;
+    background-color: #d6a40c;
 }
 
 #left {
+    padding-top: 3%;
 	height:100%;
     padding-right: 33%;
+    text-align: center;
+    color: black;
 }
 
 #map-canvas {
-	width:50%;
+	width:66%;
     height:calc(100% - 0);
     position:absolute;
-    right:96px;
-    top:50px;
+    right:0px;
+    top:75px;
     bottom:0;
+    float: left;
     /*overflow:hidden;*/
+}
+
+#uberLogo {
+    float: right;
+    height: 50%;
+    width: 50%;
+}
+
+#foodimage1 {
+    height: 23%;
+    width: 33%;
+    /*float: right;*/
+}
+
+#foodimage2 {
+    height: 24%;
+    width: 34%;
+    /*float: left;*/
+}
+
+.panel-heading {
+    font-size: 20px;
+    font-family: Geneva;
+    color: ;
+}
+
+#fire {
+    height: 10%;
+    width: 10%;
+    float: left;
+}
+
+.navbar-nav {
+    float: right;
+    height: 2%;
+}
+
+.panel {
+    float: left;
+    text-align: left;
+}
+
+#smicon1 {
+    height: 50%;
+    width: 50%;
+    float: right;
+}
+
+#smicon2 {
+    height: 50%;
+    width: 50%;
+    float: right;
+}
+
+#smicon3 {
+    height: 50%;
+    width: 50%;
+    float: right;
+}
+
+#text {
+    color: ;
+    font-size: 20px;
 }
