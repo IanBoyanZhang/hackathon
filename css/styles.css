@@ -36,8 +36,16 @@ body{
     /*float: right;*/
 }
 
-.navbar-custom li>a:hover,.navbar-custom li>a:focus {
+#smicon1:hover,.navbar-custom:focus {
 	background-color:#49bfff;
+}
+
+#smicon2:hover,:focus {
+    background-color:#49bfff;
+}
+
+#smicon3:hover {
+    background-color:#49bfff;
 }
 
 .navbar-custom a{
@@ -140,6 +148,6 @@ body{
 }
 
 #text {
-    color: ;
+    color: black;
     font-size: 20px;
 }
