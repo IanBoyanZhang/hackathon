@@ -6,7 +6,8 @@ var resources = {
   Estimates: require('./resources/Estimates'),
   Products: require('./resources/Products'),
   Promotions: require('./resources/Promotions'),
-  User: require('./resources/User')
+  User: require('./resources/User'),
+  Requests: require('./resources/Requests')
 };
 
 function Uber(options) {
@@ -115,6 +116,84 @@ Uber.prototype.get = function (options, callback) {
   request.get({
     url: url,
     //auth: accessToken,
+    json: true
+  }, function (err, data, res) {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, res);
+    }
+  });
+
+  return this;
+};
+
+// extend library to use sandbox
+// expired in 30 days
+var ACCESS_TOKEN = "LOKFVYIXAKejCd2zsRzxmBz95w4exX";
+var REFRESH_TOKEN = "6XxVszDgZasP0fJB2C25cJPqj2B40I";
+// options structure:
+// { access_token: xxx, .params: {start_lat, start_long, end_lat, end_long } }
+Uber.prototype.getSandbox = function(options, callback) {
+  if (!options.version) {
+    options.version = 'v1';
+  };
+  var base_url = options.base_url || 'https://sandbox-api.uber.com/';
+  var url = base_url + options.version + '/' + options.url + '?';
+  var access_token = options.access_token ? options.access_token : null;
+
+  accessToken = ACCESS_TOKEN;
+  if (!accessToken) {
+    url += 'server_token=' + this.defaults.server_token;
+  } else {
+    url += 'access_token=' + accessToken;
+  }
+
+  if (options.params) {
+    url += '&' + qs.stringify(options.params);
+  };
+
+  request.get({
+    url: url,
+    //auth: accessToken,
+    json: true
+  }, function (err, data, res) {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, res);
+    }
+  });
+
+  return this;
+};
+
+// options structure:
+// { {start_lat, start_long, end_lat, end_long, product_id } }
+Uber.prototype.postSandbox = function(options, callback) {
+  if (!options.version) {
+    options.version = 'v1';
+  };
+  var base_url = options.base_url || 'https://sandbox-api.uber.com/';
+  var url = base_url + options.version + '/' + options.url + '?';
+  var access_token = options.access_token ? options.access_token : null;
+
+  accessToken = ACCESS_TOKEN;
+  if (!accessToken) {
+    url += 'server_token=' + this.defaults.server_token;
+  } else {
+    url += 'access_token=' + accessToken;
+  }
+
+  if (options.params) {
+    url += '&' + qs.stringify(options.params);
+  };
+
+  console.log("postSandbox: ", url);
+  request.post({
+    url: url,
+    //auth: accessToken,
+    "Content-Type": "application/json",
     json: true
   }, function (err, data, res) {
     if (err) {
