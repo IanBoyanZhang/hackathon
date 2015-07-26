@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>2 column Google maps, foursquare (outer scroll)</title>
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>2 column Google maps, foursquare (outer scroll)</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <link href="css/styles.css" rel="stylesheet">
-	</head>
-	<body>
+  </head>
+  <body>
 <!-- begin template -->
 <div class="navbar navbar-custom navbar-fixed-top">
  <div class="navbar-header">
@@ -28,17 +27,19 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
   <!-- <img src="images/red2.jpg" id="fire"> -->
-        <li class="active"><a href="#"><img src="images/1437904549_facebook.png" id="smicon1"></a></li>
-        <li class="active"><a href="#"><img src="images/1437904553_twitter.png" id="smicon2"></a></li>     <li class="active"><a href="#"><img src="images/1437904555_google.png" id="smicon3"></a></li>
+       
         <!-- <li><a href="#">Login</a></li> -->
         <!-- <li><a href="#">Logout</a></li> -->
         <!-- <li>&nbsp;</li> -->
       </ul>
- <!--      <form class="navbar-form">
+      <form class="navbar-form">
         <div class="form-group" style="display:inline;">
-          <div class="input-group">
+          <!-- <div class="input-group"> -->
             <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+             <li class="active"><a href="#"><img src="images/1437904549_facebook.png" id="smicon1"></a></li>
+             <li class="active"><a href="#"><img src="images/1437904553_twitter.png" id="smicon2"></a></li>     
+             <li class="active"><a href="#"><img src="images/1437904555_google.png" id="smicon3"></a></li>
+              <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button> -->
               <ul class="dropdown-menu">
                 <li><a href="#">Category 1</a></li>
                 <li><a href="#">Category 2</a></li>
@@ -47,28 +48,28 @@
                 <li><a href="#">Category 5</a></li> 
               </ul>
             </div>
-            <! <input type="text" class="form-control" placeholder="What are searching for?"><!  -->
-            <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span> --> 
+            <!-- <input type="text" class="form-control" placeholder="What are searching for?"> -->
+            <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>  -->
           </div>
         </div>
       </form> 
     </div>
 </div>
-<p id="demo"></p>
+
 <div id="map-canvas"></div>
 <div class="container-fluid" id="main">
   <div class="row">
-  	<div class="col-xs-8" id="left">
+    <div class="col-xs-8" id="left">
     
       <!-- <h2>Hot Destinations</h2> -->
       
       <!-- item list -->
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Novela</a>
-           <a class="logo" href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
-      <p>50% off specialty cocktails from 3-5pm today!
+      <p id='text'>50% off specialty cocktails from 3-5pm today!
           </p>
         <img src="http://s3-media3.fl.yelpcdn.com/bphoto/SgFt9s8vBk1IM2nCHK83NA/l.jpg"
         id="foodimage1">
@@ -80,10 +81,10 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">The Brick Yard</a>
-           <a class="logo" href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
-      <p id="">33% off food at the bar from 3-5pm</p>
+      <p id="text">33% off food at the bar from 3-5pm</p>
         <img src="http://s3-media1.fl.yelpcdn.com/bphoto/7HlL2c_FdRrafGW9679E1A/l.jpg"
         id="foodimage1">
         <img src="http://s3-media4.fl.yelpcdn.com/bphoto/pcEGTjGrT7muCiKnkhte2A/l.jpg"
@@ -91,62 +92,107 @@
       <hr>
       
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a>
-          <a class="logo" href="uber.html"> <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"> </a>
+        <div class="panel-heading"><a href="">Press Club</a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
+      <p id='text'>Sunday Happy Hour! 50% off wine bottles that are $70 and up!</p>
+        <img src="http://s3-media2.fl.yelpcdn.com/bphoto/swIEgvIs8bHhyULpVYgTWw/l.jpg" id="foodimage1">
+        <img src="http://s3-media2.fl.yelpcdn.com/bphoto/K-iachy3vMTqWmN-6QOMaQ/l.jpg"
+        id="foodimage2">
       <hr>
       
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a>
-           <a class="logo" href="uber.html"> <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+        <div class="panel-heading"><a href="">Nick's Crispy Tacos</a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
+      <p id="text">Happy hour is EVERY day from 5-7pm. $3 pints! </p>
+      <img src="http://s3-media4.fl.yelpcdn.com/bphoto/tktBNxXSlBvnJhdSzkkgpg/l.jpg" id="foodimage1">
+        <img src="http://s3-media1.fl.yelpcdn.com/bphoto/NGZDALnUb_BlbbeeL10GKQ/l.jpg"
+        id="foodimage2">
       
-      <hr>
-      <!-- /item list -->
-      
-       <hr>
+     <hr>
       
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a>
-            <a class="logo" href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+        <div class="panel-heading"><a href="">Black Bird</a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-     
-        
-      <hr>      
+      <p id="text">$5 Whiskey Sours and Margaritas from 3-8pm</p>
+      <img src="http://s3-media1.fl.yelpcdn.com/bphoto/NcPLY9VI2Om9n_QiIfBIEA/l.jpg" id="foodimage1">
+        <img src="http://s3-media3.fl.yelpcdn.com/bphoto/Cm_TRiNFOFJEfzfOF0Jf6w/l.jpg"
+        id="foodimage2">
 
-    </div>
-    <div class="col-xs-4"><!--map-canvas will be postioned here--></div>
-    
-  </div>
-</div>
+      <hr>
+      
+     <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Shotwell's</a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+        </div>
+      </div>
+      <p id="text">$1 Pool Table and Pinball Machines</p>
+      <img src="http://s3-media1.fl.yelpcdn.com/bphoto/JoLRcQl82aE8bd54U0jKIg/l.jpg" id="foodimage1">
+        <img src="http://s3-media1.fl.yelpcdn.com/bphoto/hN3G7Uyxh-0rIc8le0GSdA/l.jpg"
+        id="foodimage2">
+
+        <hr>
+
+        <div class="panel panel-default">
+        <div class="panel-heading"><a href="">The Social Study</a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+        </div>
+      </div>
+      <p id="text">Cool drinks. Tasty bites. Chill vibe. Awesome music.</p>
+      <img src="http://s3-media4.fl.yelpcdn.com/bphoto/djMt_flG_fJyYTDr0JaREg/l.jpg" id="foodimage1">
+        <img src="http://s3-media3.fl.yelpcdn.com/bphoto/D-a7ugmH0WWcick6FkQIHw/l.jpg"
+        id="foodimage2">
+
+        <hr>
+
+        <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Bar Crudo</a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+        </div>
+      </div>
+      <p id="text">$4 Beers and $1 Oysters</p>
+      <img src="http://s3-media2.fl.yelpcdn.com/bphoto/YdaBYzBg7w0kJuWGrbCT-g/l.jpg" id="foodimage1">
+        <img src="http://s3-media2.fl.yelpcdn.com/bphoto/slC_oSqWBYd04i-1xuY7Pg/l.jpg"
+        id="foodimage2">
+
+        <hr>
+
+        <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Parkside Tavern</a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+        </div>
+      </div>
+      <p id="text">Come for Happy Gour. $1 Oysters, and HH wine or beer.</p>
+      <img src="http://s3-media3.fl.yelpcdn.com/bphoto/nXZaSUZ_o2HAsx-7msLyUA/l.jpg" id="foodimage1">
+        <img src="http://s3-media4.fl.yelpcdn.com/bphoto/FC6NDL1yoM2HgPwcvBNxBQ/l.jpg"
+        id="foodimage2">
+
+        <hr>
+  
 <!-- end template -->
     <!-- <div ng-view> <div> -->
-	<!-- script references -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
-		<script src="js/scripts.js"></script>
-    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
-    <script>
-      // get the viz.json url from the CartoDB Editor
+  <!-- script references -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+    <script src="js/scripts.js"></script>
+
+    <!-- angular -->
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    <script src="app/bower_components/angular/angular.js"></script>
+    <script src="app/bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/view/view.js"></script>
+  </body>
+</html>
+     <!--  // get the viz.json url from the CartoDB Editor
       // - click on visualize
       // - create new visualization
       // - make visualization public
@@ -169,7 +215,7 @@
       
       window.onload = function() {
         cartodb.createVis('map-canvas', 'https://aj42869.cartodb.com/tables/happy_hour_locations');
-      }
+      } -->
     </script>
 	</body>
 </html>
