@@ -47,6 +47,7 @@ app.get('/api/products', function(req, res) {
       res.json(result);
     }
   });
+
 });
 
 app.get('/api/estimate', function(req, res) {

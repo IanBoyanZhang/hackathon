@@ -54,7 +54,7 @@
       </form> 
     </div>
 </div>
-
+<p id="demo"></p>
 <div id="map-canvas"></div>
 <div class="container-fluid" id="main">
   <div class="row">
@@ -65,7 +65,7 @@
       <!-- item list -->
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Novela</a>
-          <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+           <a class="logo" href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
       <p>50% off specialty cocktails from 3-5pm today!
@@ -80,7 +80,7 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">The Brick Yard</a>
-           <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+           <a class="logo" href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
       <p id="">33% off food at the bar from 3-5pm</p>
@@ -92,7 +92,7 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Item heading</a>
-           <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+          <a class="logo" href="uber.html"> <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"> </a>
         </div>
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
@@ -104,7 +104,7 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Item heading</a>
-           <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+           <a class="logo" href="uber.html"> <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
@@ -119,7 +119,7 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Item heading</a>
-           <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+            <a class="logo" href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
         </div>
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
@@ -169,6 +169,21 @@
       
       window.onload = function() {
         cartodb.createVis('map-canvas', 'https://aj42869.cartodb.com/tables/happy_hour_locations');
+      }
+    </script>
+    <script>
+      var x = document.getElementById("demo");
+      function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+              console.log(navigator.geolocation.getCurrentPosition(showPosition))
+          } else {
+              x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+      }
+      function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude; 
       }
     </script>
 	</body>

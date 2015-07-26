@@ -1,0 +1,61 @@
+<idoctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>2 column Google maps, foursquare (outer scroll)</title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="css/uber.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="uber-banner">Uber <button> REQUEST A RIDE </button></div>
+  <div class="divider">Products</div>
+  <div id="products">
+    <tr>
+      <td><img src="http://cdn.phillymag.com/wp-content/uploads/2014/10/uberx-940x540.jpg"></td>
+      <td><img src="http://static1.squarespace.com/static/544061b4e4b0881390267d19/t/5449ad17e4b09917e1eecb5b/1414114584664/"></td>
+      <td><img src="http://uberexpansion.com/wp-content/uploads/2015/06/what-is-uberblack.png"></td>
+      <td><img src="http://static1.squarespace.com/static/544061b4e4b0881390267d19/t/544a90dce4b084696e58c2ad/1414172893511/"></td>
+      <td><img src="http://static1.squarespace.com/static/544061b4e4b0881390267d19/t/544dad43e4b0c74d75f2f95c/1414376773240/"></td>
+    </tr>
+  </div>
+  <div class="divider">  Trip Estimate</div>
+  <div id="estimate">
+    <tr id="product-estimates">
+    </tr>
+  </div>
+
+  <p id="demo"></p>
+  <script>
+    navigator.geolocation.getCurrentPosition(showPosition);
+    var location = navigator.geolocation;
+    console.log(location);
+  </script>
+    <script>
+    var x = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+            console.log(navigator.geolocation.getCurrentPosition(showPosition))
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude; 
+    }
+  </script>
+</body>
+
+</html>
+
+
+
