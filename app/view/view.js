@@ -10,5 +10,5 @@ angular.module('HotSpot.view', ['ngRoute'])
 }])
 
 .controller('ViewCtrl', ['$http','$scope', function($http, $scope) {
- 
+  console.log($scope.somevalue);
 }]);

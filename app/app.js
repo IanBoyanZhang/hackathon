@@ -6,5 +6,8 @@ angular.module('HotSpot', [
   'HotSpot.view'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view'});
+  $routeProvider.otherwise({redirectTo: '/index.html'});
+}])
+.controller('appCtrl', ['$http','$scope', function($http, $scope) {
+  $scope.somevalue = 5;
 }]);

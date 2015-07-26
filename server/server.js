@@ -50,7 +50,9 @@ app.get('/api/products', function(req, res) {
 
 });
 
-app.get('/api/estimate', function(req, res) {
+app.post('/api/estimate', function(req, res) {
+  
+
   var start_end = {
     start_latitude: 37.7833,
     start_longitude: -122.4167,
@@ -70,6 +72,7 @@ app.get('/api/estimate', function(req, res) {
 });
 
 app.post('/api/request', function(req, res) {
+  // Get this data from client side 
   var start_end = {
     product_id: "uberX",
     start_latitude: 37.7833,
@@ -79,7 +82,6 @@ app.post('/api/request', function(req, res) {
   };
 
   var cb = function(err, result, body) {
-    console.log("start_end", JSON.stringify(start_end));
     // your code here
     if (err) {
       console.error(err);
@@ -103,8 +105,12 @@ app.post('/api/request', function(req, res) {
     }
   }
   request.post(options, cb);
+});
 
-re] added additional uber.html view
+app.get('/api/request', function(req, res) {
+  // input: request_id
+  var request_id = '211d000c-b8f0-4b70-8efa-2b30e7600530';
+
 });
 
 app.get('/', function(req, res) {
@@ -127,8 +133,30 @@ app.get('/', function(req, res) {
 });
 
 
+app.delete('/api/request/', function(req, res) {
+  var request_id = '211d000c-b8f0-4b70-8efa-2b30e7600530';
+  var cb = function(err, result, body) {
+    // your code here
+    if (err) {
+      console.error(err);
+    } else { 
+      // console.log(result);
+      res.json(body);
+    };
+  }
 
-var server = app.listen(8000, function() {
-  var port = server.address().port;
+  var options = {
+    'url': 'https://api.uber.com/v1/requests/' + request_id,
+    'headers': {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + ACCESS_TOKEN
+    }
+  }
+
+  request.delete(options, cb);
+});
+
+
+app.listen(port, function() {
   console.log('Hot Spot Server is in action');
 });
