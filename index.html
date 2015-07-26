@@ -16,7 +16,9 @@
 	<body>
 <!-- begin template -->
 <div class="navbar navbar-custom navbar-fixed-top">
- <div class="navbar-header"><a class="navbar-brand" href="#">The Hotspot</a>
+ <div class="navbar-header">
+  <img src="images/red2.jpg" id="fire">
+  <a class="navbar-brand" href="#">hotspot</a>
       <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -25,12 +27,14 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Profile</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Logout</a></li>
-        <li>&nbsp;</li>
+  <!-- <img src="images/red2.jpg" id="fire"> -->
+        <li class="active"><a href="#"><img src="images/1437904549_facebook.png" id="smicon1"></a></li>
+        <li class="active"><a href="#"><img src="images/1437904553_twitter.png" id="smicon2"></a></li>     <li class="active"><a href="#"><img src="images/1437904555_google.png" id="smicon3"></a></li>
+        <!-- <li><a href="#">Login</a></li> -->
+        <!-- <li><a href="#">Logout</a></li> -->
+        <!-- <li>&nbsp;</li> -->
       </ul>
-      <form class="navbar-form">
+ <!--      <form class="navbar-form">
         <div class="form-group" style="display:inline;">
           <div class="input-group">
             <div class="input-group-btn">
@@ -43,11 +47,11 @@
                 <li><a href="#">Category 5</a></li> 
               </ul>
             </div>
-            <!-- <input type="text" class="form-control" placeholder="What are searching for?"><!  -->
+            <! <input type="text" class="form-control" placeholder="What are searching for?"><!  -->
             <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span> --> 
           </div>
         </div>
-      </form>
+      </form> 
     </div>
 </div>
 
@@ -56,11 +60,40 @@
   <div class="row">
   	<div class="col-xs-8" id="left">
     
-      <h2>Hotspots</h2>
+      <!-- <h2>Hot Destinations</h2> -->
       
       <!-- item list -->
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Novela</a></div>
+        <div class="panel-heading"><a href="">Novela</a>
+          <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+        </div>
+      </div>
+      <p>50% off specialty cocktails from 3-5pm today!
+          </p>
+        <img src="http://s3-media3.fl.yelpcdn.com/bphoto/SgFt9s8vBk1IM2nCHK83NA/l.jpg"
+        id="foodimage1">
+        <img src="http://s3-media3.fl.yelpcdn.com/bphoto/0EhOgduo3veteU6Jo9yrcA/l.jpg"
+        id="foodimage2">
+          
+      
+      <hr>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading"><a href="">The Brick Yard</a>
+           <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+        </div>
+      </div>
+      <p id="">33% off food at the bar from 3-5pm</p>
+        <img src="http://s3-media1.fl.yelpcdn.com/bphoto/7HlL2c_FdRrafGW9679E1A/l.jpg"
+        id="foodimage1">
+        <img src="http://s3-media4.fl.yelpcdn.com/bphoto/pcEGTjGrT7muCiKnkhte2A/l.jpg"
+        id="foodimage2">
+      <hr>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Item heading</a>
+           <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+        </div>
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
         Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
@@ -70,27 +103,9 @@
       <hr>
       
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-    <!--   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-     -->  
-      <hr>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
+        <div class="panel-heading"><a href="">Item heading</a>
+           <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+        </div>
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
         Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
@@ -100,15 +115,20 @@
       <hr>
       <!-- /item list -->
       
-      <p>
-      <a href="http://www.bootply.com/render/129229">Demo</a> | <a href="http://bootply.com/129229">Source Code</a>
-      </p>
+       <hr>
       
-      <hr> 
-        
-      <p>
-      <a href="http://bootply.com" target="_ext" class="center-block btn btn-primary">More Bootstrap Snippets on Bootply</a>
-      </p>
+      <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Item heading</a>
+           <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo">
+        </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+        Aliquam in felis sit amet augue.</p>
+      
+      <hr>
+     
         
       <hr>      
 
