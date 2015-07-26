@@ -6,8 +6,7 @@ var resources = {
   Estimates: require('./resources/Estimates'),
   Products: require('./resources/Products'),
   Promotions: require('./resources/Promotions'),
-  User: require('./resources/User'),
-  Requests: require('./resources/Requests')
+  User: require('./resources/User')
 };
 
 function Uber(options) {
@@ -156,44 +155,6 @@ Uber.prototype.getSandbox = function(options, callback) {
   request.get({
     url: url,
     //auth: accessToken,
-    json: true
-  }, function (err, data, res) {
-    if (err) {
-      callback(err);
-    } else {
-      callback(null, res);
-    }
-  });
-
-  return this;
-};
-
-// options structure:
-// { {start_lat, start_long, end_lat, end_long, product_id } }
-Uber.prototype.postSandbox = function(options, callback) {
-  if (!options.version) {
-    options.version = 'v1';
-  };
-  var base_url = options.base_url || 'https://sandbox-api.uber.com/';
-  var url = base_url + options.version + '/' + options.url + '?';
-  var access_token = options.access_token ? options.access_token : null;
-
-  accessToken = ACCESS_TOKEN;
-  if (!accessToken) {
-    url += 'server_token=' + this.defaults.server_token;
-  } else {
-    url += 'access_token=' + accessToken;
-  }
-
-  if (options.params) {
-    url += '&' + qs.stringify(options.params);
-  };
-
-  console.log("postSandbox: ", url);
-  request.post({
-    url: url,
-    //auth: accessToken,
-    "Content-Type": "application/json",
     json: true
   }, function (err, data, res) {
     if (err) {
