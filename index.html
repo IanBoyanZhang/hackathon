@@ -153,7 +153,7 @@
       // - click on publish
       // - go to API tab
         $(document).ready(function() {
-           $("img#uberLogo").on('click', function() {
+           $("img#fire").on('click', function() {
              $.ajax({
                method: 'POST',
                url: 'http://localhost:8000/api/request',
@@ -169,21 +169,6 @@
       
       window.onload = function() {
         cartodb.createVis('map-canvas', 'https://aj42869.cartodb.com/tables/happy_hour_locations');
-      }
-    </script>
-    <script>
-      var x = document.getElementById("demo");
-      function getLocation() {
-          if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition);
-              console.log(navigator.geolocation.getCurrentPosition(showPosition))
-          } else {
-              x.innerHTML = "Geolocation is not supported by this browser.";
-          }
-      }
-      function showPosition(position) {
-          x.innerHTML = "Latitude: " + position.coords.latitude + 
-          "<br>Longitude: " + position.coords.longitude; 
       }
     </script>
 	</body>

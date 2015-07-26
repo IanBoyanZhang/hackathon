@@ -104,6 +104,7 @@ app.post('/api/request', function(req, res) {
   }
   request.post(options, cb);
 
+re] added additional uber.html view
 });
 
 app.get('/', function(req, res) {
