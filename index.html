@@ -7,6 +7,7 @@
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -123,6 +124,20 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
 		<script src="js/scripts.js"></script>
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script>
+      // get the viz.json url from the CartoDB Editor
+      // - click on visualize
+      // - create new visualization
+      // - make visualization public
+      // - click on publish
+      // - go to API tab
+
+      window.onload = function() {
+        cartodb.createVis('map-canvas', 'https://aj42869.cartodb.com/tables/happy_hour_locations');
+      }
+    </script>
+
 
     <!-- angular -->
     <!-- In production use:
