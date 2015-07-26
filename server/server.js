@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../'));
 
 // app.use(express.cookieParser())
-
+var MESSAGE_QUEUE = [];
 // Public data and method
 var uber = new Uber({
   client_id: 'p9rIDKb14NHPjGlCjjejfVNlMrFOeqUP',
@@ -21,6 +21,26 @@ var uber = new Uber({
   redirect_uri: 'http://localhost:8000',
   name: 'Uber Hot Spot'
 });
+
+var poi = [
+{
+  "start_latitude": "37.7875774",
+  "start_longitude": "-122.4002364",
+  "end_latitude": "37.771495",
+  "end_longitude": "-122.4314003",
+  "product_id" : "uberX"
+},
+{
+  "start_latitude": "37.7875774",
+  "start_longitude": "-122.4002364",
+  "end_latitude": "37.7881016",
+  "end_longitude": "-122.4203775",
+  "product_id" : "uberX"
+},
+{
+
+}
+]
 
 var VEHICLES = {
   'uberX':'a1111c8c-c720-46c3-8534-2fcdd730040d',
@@ -43,7 +63,7 @@ app.get('/api/products', function(req, res) {
     if (err) {
       console.error(err);
     } else { 
-      console.log(result);
+        console.log(result);
       res.json(result);
     }
   });
@@ -51,8 +71,6 @@ app.get('/api/products', function(req, res) {
 });
 
 app.post('/api/estimate', function(req, res) {
-  
-
   var start_end = {
     start_latitude: 37.7833,
     start_longitude: -122.4167,
@@ -72,24 +90,21 @@ app.post('/api/estimate', function(req, res) {
 });
 
 app.post('/api/request', function(req, res) {
-  // Get this data from client side 
-  var start_end = {
-    product_id: "uberX",
-    start_latitude: 37.7833,
-    start_longitude: -122.4167,
-    end_latitude:  37.7875176, 
-    end_longitude: -122.3998683
-  };
-
+  var start_end = poi[Number(req.body.id) - 1];
+  console.log("body", req.body);
+  console.log(start_end);
   var cb = function(err, result, body) {
     // your code here
     if (err) {
       console.error(err);
     } else { 
-      // console.log(result);
+      console.log(body);
       res.json(body);
+      // body.request_id;
+      MESSAGE_QUEUE.push(body.request_id);
     };
-  }
+  };
+
   var options = {
     'url': 'https://sandbox-api.uber.com/v1/requests',
     'headers': {
@@ -108,9 +123,34 @@ app.post('/api/request', function(req, res) {
 });
 
 app.get('/api/request', function(req, res) {
-  // input: request_id
-  var request_id = '211d000c-b8f0-4b70-8efa-2b30e7600530';
 
+  if (MESSAGE_QUEUE.length>0) {
+    var request_id = MESSAGE_QUEUE.pop();
+    console.log(request_id);
+  };
+
+  var cb = function(err, result, body) {
+    // your code here
+    if (err) {
+      console.error(err);
+    } else { 
+      console.log(body);
+      res.json(body);
+      // body.request_id;
+    };
+  };
+
+  var options = {
+    'url': 'https://sandbox-api.uber.com/v1/requests/' + request_id +"/map",
+    'headers': {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + ACCESS_TOKEN
+    },
+    'json': {
+
+    }
+  }
+  request.get(options, cb);
 });
 
 app.get('/', function(req, res) {

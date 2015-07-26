@@ -68,7 +68,9 @@
       <!-- item list -->
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Novela</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html">
+            <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo1">
+            </a>
         </div>
       </div>
       <p id='text'>50% off specialty cocktails from 3-5pm today!
@@ -83,7 +85,9 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">The Brick Yard</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html">
+            <img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo2">
+          </a>
         </div>
       </div>
       <p id="text">33% off food at the bar from 3-5pm</p>
@@ -95,7 +99,7 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Press Club</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo3"></a>
         </div>
       </div>
       <p id='text'>Sunday Happy Hour! 50% off wine bottles that are $70 and up!</p>
@@ -106,7 +110,7 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Nick's Crispy Tacos</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo4"></a>
         </div>
       </div>
       <p id="text">Happy hour is EVERY day from 5-7pm. $3 pints! </p>
@@ -118,7 +122,7 @@
       
       <div class="panel panel-default">
         <div class="panel-heading"><a href="">Black Bird</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo5"></a>
         </div>
       </div>
       <p id="text">$5 Whiskey Sours and Margaritas from 3-8pm</p>
@@ -130,7 +134,7 @@
       
      <div class="panel panel-default">
         <div class="panel-heading"><a href="">Shotwell's</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo6"></a>
         </div>
       </div>
       <p id="text">$1 Pool Table and Pinball Machines</p>
@@ -142,7 +146,7 @@
 
         <div class="panel panel-default">
         <div class="panel-heading"><a href="">The Social Study</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo7"></a>
         </div>
       </div>
       <p id="text">Cool drinks. Tasty bites. Chill vibe. Awesome music.</p>
@@ -154,7 +158,7 @@
 
         <div class="panel panel-default">
         <div class="panel-heading"><a href="">Bar Crudo</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo8"></a>
         </div>
       </div>
       <p id="text">$4 Beers and $1 Oysters</p>
@@ -166,7 +170,7 @@
 
         <div class="panel panel-default">
         <div class="panel-heading"><a href="">Parkside Tavern</a>
-          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo"></a>
+          <a href="uber.html"><img src="images/UBER_API_RIDE BY UBER Badges_2x BLACK_22px.png" id="uberLogo9"></a>
         </div>
       </div>
       <p id="text">Come for Happy Gour. $1 Oysters, and HH wine or beer.</p>
@@ -175,7 +179,6 @@
         id="foodimage2">
 
         <hr>
-  
 <!-- end template -->
     <!-- <div ng-view> <div> -->
   <!-- script references -->
@@ -184,6 +187,41 @@
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
     <script src="js/scripts.js"></script>
 
+
+  
+    <script type="text/javascript">
+        $(document).ready(function() {
+           $("#uberLogo1").on('click', function() {
+             $.ajax({
+               method: 'POST',
+               url: 'http://localhost:8000/api/request',
+               data: {"id": 1},
+               success: function(data) {
+                 console.log(data);
+               },
+               error: function(xhr, status, err) {
+                 console.log("requests error", err);
+               }
+             })
+           });
+
+           $("#uberLogo2").on('click', function() {
+             $.ajax({
+               method: 'POST',
+               url: 'http://localhost:8000/api/request',
+               data: {"id": 2},
+               success: function(data) {
+                 console.log(data);
+               },
+               error: function(xhr, status, err) {
+                 console.log("requests error", err);
+               }
+             })
+           });
+
+
+         })
+    </script>
     <!-- angular -->
     <!-- In production use:
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -193,31 +231,4 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/view/view.js"></script>
   </body>
-</html>
-     <!--  // get the viz.json url from the CartoDB Editor
-      // - click on visualize
-      // - create new visualization
-      // - make visualization public
-      // - click on publish
-      // - go to API tab
-        $(document).ready(function() {
-           $("img#fire").on('click', function() {
-             $.ajax({
-               method: 'POST',
-               url: 'http://localhost:8000/api/request',
-               success: function(data) {
-                 console.log(data);
-               },
-               error: function(xhr, status, err) {
-                 console.log("requests error", err);
-               }
-             })
-           });
-         })
-      
-      window.onload = function() {
-        cartodb.createVis('map-canvas', 'https://aj42869.cartodb.com/tables/happy_hour_locations');
-      } -->
-    </script>
-	</body>
-</html>
+</html>    

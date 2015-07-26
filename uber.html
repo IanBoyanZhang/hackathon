@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
   <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -20,7 +21,7 @@
     </div>
 
     <div class = "wrapper">
-       <button class="button"> REQUEST A RIDE </button>
+       <button class="button" id="request_ride"> REQUEST A RIDE </button>
     </div>
 
   <!-- <div class="divider wrapper">Products</div> -->
@@ -39,27 +40,47 @@
     </tr>
   </div>
 
-  <p id="demo"></p>
-  <script>
-    navigator.geolocation.getCurrentPosition(showPosition);
-    var location = navigator.geolocation;
-    console.log(location);
-  </script>
-    <script>
-    var x = document.getElementById("demo");
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-            console.log(navigator.geolocation.getCurrentPosition(showPosition))
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude + 
-        "<br>Longitude: " + position.coords.longitude; 
-    }
-  </script>
+  <div id="map">
+  </div>
+
+
+   <script>
+   // var x = document.getElementById("demo");
+   // function getLocation() {
+   //     if (navigator.geolocation) {
+   //         navigator.geolocation.getCurrentPosition(showPosition);
+   //         console.log(navigator.geolocation.getCurrentPosition(showPosition))
+   //     } else {
+   //         x.innerHTML = "Geolocation is not supported by this browser.";
+   //     }
+   // }
+   // function showPosition(position) {
+   //     x.innerHTML = "Latitude: " + position.coords.latitude + 
+   //     "Longitude: " + position.coords.longitude; 
+   // }
+
+   $(document).ready(function() {
+    $('#request_ride').on("click", function() {
+      // console.log(navigator.geolocation.getCurrentPosition(showPosition));
+      // var locationStr = $('p#demo').html();
+       $.ajax({
+         method: 'GET',
+         url: 'http://localhost:8000/api/request',
+         success: function(data) {
+           console.log(data);
+           console.log("map_data", data.href);
+           // var $map = $('<iframe src=' + data.href + '></iframe>');
+           // $("#map").append($map);
+           window.location.replace(data.href);
+         },
+         error: function(xhr, status, err) {
+           console.log("requests error", err);
+         }
+       })
+     });
+    });
+    
+ </script>
 </body>
 
 </html>
