@@ -42,7 +42,8 @@ div#estimate {
 }
 
 #uber-banner {
-  background-color:   
+  width: 33%;
+  /*height: 50%; */
 }
 
 .wrapper {
@@ -64,7 +65,7 @@ div#estimate {
   -o-transition: .3s;
   display: inline-block;
   color: white;
-  border: 2px white solid;
+  border: 2px black solid;
 }
 
 .button:hover {
