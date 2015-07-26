@@ -9,6 +9,6 @@ angular.module('HotSpot.view', ['ngRoute'])
   });
 }])
 
-.controller('ViewCtrl', [function() {
-
+.controller('ViewCtrl', ['$http','$scope', function($http, $scope) {
+ 
 }]);
