@@ -2,7 +2,7 @@ var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var port = process.env.PORT || 8000; 
+var port = 8000; 
 var app = express();
 var Uber = require('./lib/Uber.js');
 var config = require('./config/config.js');
@@ -47,6 +47,7 @@ app.get('/api/products', function(req, res) {
       res.json(result);
     }
   });
+
 });
 
 app.get('/api/estimate', function(req, res) {
@@ -103,8 +104,31 @@ app.post('/api/request', function(req, res) {
   }
   request.post(options, cb);
 
+re] added additional uber.html view
 });
 
-app.listen(port, function() {
+app.get('/', function(req, res) {
+  var access;
+  ajax.get({
+    url: "https://login.uber.com/oauth/token",
+    content: "application/json",
+    Authorization: {
+      client_id: "i1wKltHiwwoVyJW6gxLCezztn1k5xgYJ",
+      client_secret: "OttdwJjgN1juCkTyuvDGA_p24s2qbMMvCOu42dS3"
+    }, 
+    success: function(code) {
+      var access = code;
+    }, 
+    error: function(err) {
+      console.log(err);
+    }
+  });
+  console.log(access);
+});
+
+
+
+var server = app.listen(8000, function() {
+  var port = server.address().port;
   console.log('Hot Spot Server is in action');
 });
